@@ -5,18 +5,19 @@ const config = {
   appId: 'com.example.dvault',
   productName: 'Dvault',
   files: [
-    'dist/**/*',
+    'dist/main/**',
+    'dist/renderer/**',
+    'dist/preload/**',
     'package.json',
-    'node_modules/**/*'
+    'node_modules/**'
   ],
   directories: {
     buildResources: 'build',
     output: 'dist/release'
   },
   win: {
-    target: ['portable'],
+    target: ['nsis'],
     icon: path.join(__dirname, 'build', 'icon.ico'),
-    // Completely disable all signing
     sign: false,
     signAndEditExecutable: false,
     certificateFile: false,
@@ -27,8 +28,12 @@ const config = {
     verifyUpdateCodeSignature: false,
     forceCodeSigning: false
   },
-  portable: {
-    artifactName: '${productName}-${version}.${ext}'
+  nsis: {
+    oneClick: false,
+    allowToChangeInstallationDirectory: true,
+    createDesktopShortcut: true,
+    createStartMenuShortcut: true,
+    shortcutName: 'Dvault'
   },
   publish: null
 };

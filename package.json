@@ -56,15 +56,18 @@
     "appId": "com.example.dvault",
     "productName": "Dvault",
     "files": [
-      "dist/**/*",
-      "package.json"
+      "dist/main/**",
+      "dist/renderer/**",
+      "dist/preload/**",
+      "package.json",
+      "node_modules/**"
     ],
     "directories": {
       "buildResources": "build"
     },
     "win": {
       "target": [
-        "portable"
+        "nsis"
       ]
     },
     "nsis": {
