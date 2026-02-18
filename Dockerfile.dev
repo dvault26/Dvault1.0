@@ -1,0 +1,30 @@
+# Development Dockerfile with hot reload support
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install build dependencies
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    libusb-dev \
+    udev
+
+# Copy package files
+COPY package*.json ./
+COPY tsconfig.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy source
+COPY src ./src
+COPY vite.config.ts ./
+COPY build ./build
+
+# Expose ports
+EXPOSE 5173 9229 3000
+
+# Run development server
+CMD ["npm", "run", "dev"]

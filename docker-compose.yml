@@ -1,0 +1,56 @@
+version: '3.9'
+
+services:
+  dvault-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dependencies
+    container_name: dvault-dev
+    environment:
+      - NODE_ENV=development
+      - VITE_DEV_SERVER_URL=http://localhost:5173
+    ports:
+      - "5173:5173"
+      - "9229:9229"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/dist
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    privileged: true
+    networks:
+      - dvault-network
+    command: npm run dev
+
+  dvault-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: dvault-prod
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    volumes:
+      - dvault-data:/app/data
+      - dvault-keys:/app/security-keys
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    privileged: true
+    restart: unless-stopped
+    networks:
+      - dvault-network
+    command: node dist/main/main.js
+
+volumes:
+  dvault-data:
+    driver: local
+  dvault-keys:
+    driver: local
+
+networks:
+  dvault-network:
+    driver: bridge

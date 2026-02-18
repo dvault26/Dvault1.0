@@ -1,0 +1,32 @@
+{
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "usbDevices": "USB Devices",
+    "chains": "Chains & Tokens",
+    "support": "Support & Help",
+    "legal": "Legal",
+    "updates": "Software Updates",
+    "selectLanguage": "Select language",
+    "addDevice": "Add Device",
+    "removeDevice": "Remove",
+    "setPrimary": "Set Primary",
+    "register": "Register",
+    "deviceName": "Device Name",
+    "serialNumber": "Serial Number",
+    "status": "Status",
+    "save": "Save",
+    "cancel": "Cancel",
+    "addChain": "Add Chain / Token",
+    "chainName": "Chain Name",
+    "symbol": "Symbol",
+    "rpcUrl": "RPC URL",
+    "chainId": "Chain ID",
+    "derivationPath": "Derivation Path",
+    "decimals": "Decimals",
+    "logo": "Logo",
+    "contractAddress": "Token Contract Address",
+    "validate": "Validate",
+    "upload": "Upload"
+  }
+}

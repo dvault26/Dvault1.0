@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600;700&display=swap');
+@import './premium-theme.css';
+
+:root{
+  --primary:#000000;
+  --gold:#D4AF37;
+  --gold-2:#FFD27A;
+  --green:#00A86B;
+  --bg:#050505;
+  --panel:#0b0b0b;
+  --text:#F2F2F2;
+  --muted:rgba(242,242,242,0.55);
+}
+
+html,body,#root{height:100%;margin:0;font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+
+.app-root{display:flex;height:100vh}
+.app-main{flex:1;padding:28px;overflow:auto}
+
+.sidebar{width:88px;background:linear-gradient(180deg,#050505,#0b0b0b);padding:16px;box-sizing:border-box;border-right:1px solid rgba(255,255,255,0.02)}
+.dvault-logo{display:block;margin:6px auto 18px auto;width:56px;height:56px}
+.logo-small{width:36px;height:36px}
+.nav-item{color:var(--muted);display:block;padding:12px;text-align:center;margin-top:10px;border-radius:8px}
+.nav-item:hover{background:rgba(212,175,55,0.06);color:var(--text)}
+
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;color:var(--text);border:1px solid rgba(212,175,55,0.06)}
+.centered{display:flex;align-items:center;justify-content:center;height:100%}
+
+.splash-logo-img{width:220px;height:220px;border-radius:20px;display:block;margin:0 auto;box-shadow:0 10px 40px rgba(0,0,0,0.7)}
+
+.brand-heading{font-family:Cinzel,serif;color:var(--gold);text-shadow:0 2px 10px rgba(212,175,55,0.18)}
+.muted{color:var(--muted)}
+
+.button{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--primary);padding:10px 16px;border-radius:10px;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(212,175,55,0.12)}
+.button.secondary{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+/* focus states */
+.button:focus{outline:none;box-shadow:0 8px 30px rgba(212,175,55,0.14)}
+.pin-input, input[type="text"], input[type="password"], input[type="email"]{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:var(--text);width:220px}
+.pin-input:focus, input:focus{border-color:rgba(212,175,55,0.28);box-shadow:0 6px 18px rgba(212,175,55,0.06), 0 0 10px rgba(0,168,107,0.06)}
+
+/* success and error badges */
+.status-success{color:var(--green);font-weight:700}
+.status-error{color:#ff6b6b;font-weight:700}
+
+/* top center logo small modifier */
+.top-center{display:block;margin:0 auto}
+
+.settings-header{display:flex;align-items:center;gap:12px}
+.settings-header img{width:44px;height:44px}
+
+.gold-glow{filter:drop-shadow(0 12px 28px rgba(212,175,55,0.35))}
+.green-accent{color:var(--green)}
+
+/* utility */
+.top-left-logo{position:absolute;left:18px;top:18px}
+
+/* ensure VaultWheel CSS file loaded */
+@import './components/vaultWheel.css';
+
+/* registration & confirmation styles */
+.confirm-box{border-radius:12px;padding:18px;background:linear-gradient(180deg,rgba(212,175,55,0.06),rgba(255,210,120,0.02));border:1px solid rgba(212,175,55,0.12)}
+.shake{animation:shake 360ms}
+@keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-6px)}100%{transform:translateX(0)}}
+
+.success-check{animation:pop 420ms ease both}
+@keyframes pop{0%{transform:scale(0.6)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
+
+/* PreTransfer styles */
+.pretransfer-label{font-weight:700;color:var(--gold);font-size:18px}
+.pretransfer-panel{padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.2));border:1px solid rgba(255,255,255,0.02)}

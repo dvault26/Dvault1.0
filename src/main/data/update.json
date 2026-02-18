@@ -1,0 +1,5 @@
+{
+  "latestVersion": "1.2.0",
+  "notes": "\n- Added support for Mutuum Finance chain\n- Improved USB device management\n- Fixed several UI bugs\n",
+  "downloadUrl": "https://downloads.dvault.example.com/dvault-1.2.0-installer.exe"
+}

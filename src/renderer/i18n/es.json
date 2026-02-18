@@ -1,0 +1,32 @@
+{
+  "settings": {
+    "title": "Configuración",
+    "language": "Idioma",
+    "usbDevices": "Dispositivos USB",
+    "chains": "Cadenas y Tokens",
+    "support": "Soporte y Ayuda",
+    "legal": "Legal",
+    "updates": "Actualizaciones de Software",
+    "selectLanguage": "Seleccionar idioma",
+    "addDevice": "Agregar dispositivo",
+    "removeDevice": "Eliminar",
+    "setPrimary": "Establecer principal",
+    "register": "Registrar",
+    "deviceName": "Nombre del dispositivo",
+    "serialNumber": "Número de serie",
+    "status": "Estado",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "addChain": "Agregar cadena / token",
+    "chainName": "Nombre de cadena",
+    "symbol": "Símbolo",
+    "rpcUrl": "RPC URL",
+    "chainId": "ID de cadena",
+    "derivationPath": "Ruta de derivación",
+    "decimals": "Decimales",
+    "logo": "Logo",
+    "contractAddress": "Dirección de contrato",
+    "validate": "Validar",
+    "upload": "Subir"
+  }
+}

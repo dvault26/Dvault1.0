@@ -1,0 +1,53 @@
+:root{
+  --primary:#000000;
+  --bg:#050505;
+  --text:#F2F2F2;
+  --gold:#D4AF37;
+  --gold-2:#FFD27A;
+  --green:#00A86B;
+}
+
+.vault-wheel-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+.vault-wheel{width:220px;height:220px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;transform-style:preserve-3d;transition:box-shadow 220ms}
+.wheel-ring{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 35% 25%, rgba(255,255,255,0.05), rgba(0,0,0,0.6));box-shadow:0 6px 18px rgba(0,0,0,0.6), inset 0 4px 10px rgba(255,255,255,0.02)}
+.wheel-spoke{position:absolute;width:10px;height:48%;left:50%;top:6%;transform-origin:50% 100%;background:linear-gradient(180deg,var(--gold),var(--gold-2));box-shadow:0 2px 6px rgba(0,0,0,0.5);border-radius:6px}
+.wheel-center{position:absolute;width:86px;height:86px;border-radius:50%;background:linear-gradient(180deg,#222,rgba(0,0,0,0.8));display:flex;align-items:center;justify-content:center;font-family:Cinzel,serif;font-size:28px;color:var(--gold);box-shadow:0 6px 20px rgba(0,0,0,0.7), 0 0 18px rgba(212,175,55,0.14) inset}
+.vault-wheel .wheel-spoke.spoke-0{transform:translateX(-50%) rotate(0deg)}
+.vault-wheel .wheel-spoke.spoke-1{transform:translateX(-50%) rotate(30deg)}
+.vault-wheel .wheel-spoke.spoke-2{transform:translateX(-50%) rotate(60deg)}
+.vault-wheel .wheel-spoke.spoke-3{transform:translateX(-50%) rotate(90deg)}
+.vault-wheel .wheel-spoke.spoke-4{transform:translateX(-50%) rotate(120deg)}
+.vault-wheel .wheel-spoke.spoke-5{transform:translateX(-50%) rotate(150deg)}
+.vault-wheel .wheel-spoke.spoke-6{transform:translateX(-50%) rotate(180deg)}
+.vault-wheel .wheel-spoke.spoke-7{transform:translateX(-50%) rotate(210deg)}
+.vault-wheel .wheel-spoke.spoke-8{transform:translateX(-50%) rotate(240deg)}
+.vault-wheel .wheel-spoke.spoke-9{transform:translateX(-50%) rotate(270deg)}
+.vault-wheel .wheel-spoke.spoke-10{transform:translateX(-50%) rotate(300deg)}
+.vault-wheel .wheel-spoke.spoke-11{transform:translateX(-50%) rotate(330deg)}
+
+.vault-wheel.spin{animation:spinWheel 1.2s cubic-bezier(.2,.9,.2,1)}
+@keyframes spinWheel{0%{transform:rotateZ(0deg)}50%{transform:rotateZ(1080deg)}100%{transform:rotateZ(1260deg) translateZ(0)}}
+
+/* slow, subtle rotate while typing */
+.vault-wheel.slow-rotate{animation:slowRotate 3s linear infinite}
+@keyframes slowRotate{0%{transform:rotateZ(0deg)}100%{transform:rotateZ(360deg)}}
+
+/* shake on failure */
+.vault-wheel.shake{animation:shake 0.9s ease-in-out}
+@keyframes shake{0%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}100%{transform:translateX(0)}}
+
+/* fast spin and green glow on success */
+.vault-wheel.fast-spin{animation:fastSpin 1.2s cubic-bezier(.2,.9,.2,1)}
+@keyframes fastSpin{0%{transform:rotateZ(0deg)}60%{transform:rotateZ(1440deg)}100%{transform:rotateZ(1620deg)}}
+.vault-wheel.success{box-shadow:0 18px 60px rgba(0,168,107,0.28), inset 0 0 40px rgba(0,168,107,0.08)}
+.vault-wheel.success .wheel-center{box-shadow:0 8px 30px rgba(0,168,107,0.28) inset, 0 0 24px rgba(0,168,107,0.18)}
+
+/* open animation: rotate 90deg and reveal */
+.vault-wheel.open{transform:rotateZ(90deg);transition:transform 520ms ease-in-out}
+.vault-wheel .wheel-open{position:absolute;inset:0;border-radius:50%;pointer-events:none;opacity:0}
+.vault-wheel.open .wheel-open{opacity:1;background:radial-gradient(circle at 30% 30%, rgba(0,168,107,0.12), transparent 40%)}
+
+.vault-hint{color:var(--text);opacity:0.85;font-family:Inter,Arial,sans-serif}
+
+/* glow effect for premium look */
+.glow-logo{filter:drop-shadow(0 6px 18px rgba(212,175,55,0.45)) drop-shadow(0 2px 6px rgba(0,168,107,0.12))}

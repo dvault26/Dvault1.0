@@ -1,0 +1,43 @@
+{
+  "exchanges": [
+    {
+      "id": "binance",
+      "name": "Binance",
+      "chains": ["ethereum", "bsc", "polygon"],
+      "addresses": [
+        "0x0000000000000000000000000000000000000000",
+        "0xBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBbBb"
+      ],
+      "notes": "Template addresses — replace with curated set before production"
+    },
+    {
+      "id": "coinbase",
+      "name": "Coinbase",
+      "chains": ["ethereum", "solana"],
+      "addresses": [
+        "0xCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCcCc",
+        "cb_fn_.*"
+      ],
+      "notes": "Include regex-style patterns when appropriate"
+    },
+    {
+      "id": "kraken",
+      "name": "Kraken",
+      "chains": ["bitcoin", "ethereum"],
+      "addresses": [
+        "1KrakeNExampleBTCAddress1111111111111",
+        "0xKrakenEthDeposit.*"
+      ],
+      "notes": "Example entries — do not rely on these for production detection"
+    },
+    {
+      "id": "mutuum",
+      "name": "Mutuum Finance",
+      "chains": ["ethereum"],
+      "addresses": [
+        "0xMutuumExampleDeposit000000000000000000"
+      ],
+      "notes": "Local chain registry entry for Mutuum Finance"
+    }
+  ]
+}
